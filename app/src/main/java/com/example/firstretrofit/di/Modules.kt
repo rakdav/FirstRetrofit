@@ -3,6 +3,7 @@ package com.example.firstretrofit.di
 import com.example.firstretrofit.data.CatsAPI
 import com.example.firstretrofit.data.PetsRepository
 import com.example.firstretrofit.data.PetsRepositoryImpl
+import com.example.firstretrofit.viewmodel.PetsViewModel
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
@@ -18,5 +19,5 @@ val appModules= module {
                 client(OkHttpClient()).build()
     }
     single { get<Retrofit>().create(CatsAPI::class.java) }
-
+    single{ PetsViewModel(get()) }
 }

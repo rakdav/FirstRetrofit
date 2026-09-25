@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 class PetsViewModel(private val petsRepository: PetsRepository): ViewModel() {
     val petsUiState= MutableStateFlow(PetsUIState())
     init {
-
+        getPets()
     }
     private fun getPets()
     {

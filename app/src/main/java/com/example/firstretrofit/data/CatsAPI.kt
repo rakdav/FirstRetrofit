@@ -7,7 +7,5 @@ import retrofit2.http.Query
 
 interface CatsAPI {
     @GET("cats")
-    suspend fun fetchCats(
-        @Query("tag") tag: String
-    ): Response<List<Cat>>
+    suspend fun fetchCats(): Response<List<Cat>>
 }
